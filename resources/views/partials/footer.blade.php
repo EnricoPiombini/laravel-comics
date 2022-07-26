@@ -58,7 +58,7 @@
 
          <div class="col-6">
              <div class="bg-logo">
-
+<img src="{{asset('images/dc-logo-bg.png') }}" alt="" class="w-100">
              </div>
 
 

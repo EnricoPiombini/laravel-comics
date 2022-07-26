@@ -2,7 +2,7 @@
     <nav class="mnav d-flex justify-content-around align-items-center p-4">
         <div class="left-side">
             <a class="navbar-brand" href="#">
-                <img src="img/dc-logo.png" class="d-inline-block align-text-top">
+                <img src=" {{asset('images/dc-logo.png')}} " class="d-inline-block align-text-top">
             </a>
         </div>
         <div class="right-side">
