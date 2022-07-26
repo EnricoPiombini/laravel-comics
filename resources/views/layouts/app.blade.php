@@ -17,11 +17,12 @@
     <header>
         @include('partials.header')
     </header>
-    <div class="container">
+    
         <main>
             @yield('main_content')
+            @yield('bannerBlue_content')
         </main>
-    </div>
+    
     <footer>
         @include('partials.footer')
     </footer>

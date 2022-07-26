@@ -13,13 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('chi_siamo');
-});
-
 Route::get('/cards', function () {
     $cards = config("comics");
     return view('cards', [
         "cards" => $cards
     ]);
 }) ->name("cards");
+
+Route::get('/bannerBlue', function () {
+    $links = config("comics");
+    return view('links', [
+        "links" => $links
+    ]);
+}) ->name("links");
