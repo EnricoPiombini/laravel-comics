@@ -20,7 +20,7 @@
     
         <main>
             @yield('main_content')
-            @yield('bannerBlue_content')
+          
         </main>
     
     <footer>

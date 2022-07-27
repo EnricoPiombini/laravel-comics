@@ -13,16 +13,40 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('/', function () {
+
+    return view('chi-siamo');
+})->name("chi-siamo");
+
+
+
 Route::get('/cards', function () {
     $cards = config("comics");
-    return view('cards', [
+    return view('cards.index', [
         "cards" => $cards
     ]);
-}) ->name("cards");
+})->name("cards");
 
-Route::get('/bannerBlue', function () {
-    $links = config("comics");
-    return view('links', [
-        "links" => $links
-    ]);
-}) ->name("links");
+
+Route::get('/cards/{id}', function ($id) {
+    $cards = config("comics");
+
+    $foundProduct = null;
+
+    foreach ($cards as $i => $card) {
+        if ($card['id'] === intval($id)) {
+            $foundProduct = $card;
+            break;
+        }
+    }
+
+    return view(
+        'cards.show', 
+        [
+            'card'=> $foundProduct
+        ]
+    );
+})->name('cards.show');
+
+
